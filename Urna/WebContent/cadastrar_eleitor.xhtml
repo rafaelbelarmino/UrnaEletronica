@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" template="template.xhtml">
+
+	<ui:define name="title">
+	
+		Cadastro do Eleitor
+		
+	</ui:define>
+
+	<ui:define name="content">
+
+		<div id="formulario">
+			<h:form name="meu_form">
+
+				<h1>CADASTRO ELEITOR</h1>
+
+				<p:messages id="messages" showDetail="false" autoUpdate="true"
+					closable="true" style="color:green;margin:8px;" />
+
+				<p class="nome">
+					<label for="nome">Nome:</label><br />
+					<p:inputText id="nome" type="text"
+						placeholder="Informe seu nome" required="true"
+						value="#{eleitorBean.eleitor.nome}" />
+				</p>
+
+				<p class="fone">
+					<label for="fone">Endereço:</label><br />
+					<p:inputText id="endereco" type="text"
+						placeholder="informe seu endereço:" required="true"
+						value="#{eleitorBean.eleitor.endereco}" />
+
+				</p>
+
+				<p>
+					<label for="cpf">CPF:</label><br />
+					<p:inputText id="cpf" type="text" placeholder="Informe seu cpf:"
+						required="true" value="#{eleitorBean.eleitor.cpf}" />
+
+				</p>
+
+				<p>
+					<label for="rg">RG:</label><br />
+					<p:inputText id="rg" type="text" placeholder="Informe Numero da Identidade:"
+						required="true" value="#{eleitorBean.eleitor.RG}" />
+
+				</p>
+
+				<p>
+					<label for="rg">Título de votação:</label><br />
+					<p:inputText id="tituloVotacao" type="text"
+						placeholder="Numero do Titulo de eleitor:" required="true"
+						value="#{eleitorBean.eleitor.tituloVotacao}" />
+
+				</p>
+				<p>
+					<label for="secao">Seção:</label><br />
+					<p:inputText id="secao" type="text"
+						placeholder="Numero da seção:" required="true"
+						value="#{eleitorBean.eleitor.secao}" />
+
+				</p>
+
+				<p class="submit">
+					<p:commandButton value="Cadastrar"
+						actionListener="#{eleitorBean.inserir}" />
+				</p>
+
+			</h:form>
+
+		</div>
+
+	</ui:define>
+
+</ui:composition>
